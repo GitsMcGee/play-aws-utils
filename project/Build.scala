@@ -5,7 +5,7 @@ import play.Play.autoImport._
 object ApplicationBuild extends Build {
 
   val appName = "play-aws-utils"
-  val appVersion = "3.0.0"
+  val appVersion = "4.0.0-SNAPSHOT"
 
   val appDependencies = Seq(
     ws
