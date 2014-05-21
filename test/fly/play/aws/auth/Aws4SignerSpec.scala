@@ -12,12 +12,13 @@ import org.specs2.mutable.Specification
 
 import play.api.http.ContentTypeOf
 import play.api.libs.ws.WS
+import play.api.test.WithApplication
 
 object Aws4SignerSpec extends Specification {
 
   "Aws4Signer" should {
 
-    "example1" >> {
+    "example1" >> new WithApplication {
 
       val expectedCannonicalRequest =
         """|GET
@@ -57,7 +58,7 @@ object Aws4SignerSpec extends Specification {
       }
     }
 
-    "example2 GET Object" >> {
+    "example2 GET Object" >> new WithApplication {
 
       val expectedCannonicalRequest =
         """|GET
@@ -101,7 +102,7 @@ object Aws4SignerSpec extends Specification {
       }
     }
 
-    "example3 PUT Object" >> {
+    "example3 PUT Object" >> new WithApplication {
 
       val expectedCannonicalRequest =
         """|PUT
@@ -150,7 +151,7 @@ object Aws4SignerSpec extends Specification {
       }
     }
 
-    "example4 GET Bucket Lifecycle" >> {
+    "example4 GET Bucket Lifecycle" >> new WithApplication {
 
       val expectedCannonicalRequest =
         """|GET
@@ -194,7 +195,7 @@ object Aws4SignerSpec extends Specification {
       }
     }
 
-    "example5 Get Bucket (List Objects)" >> {
+    "example5 Get Bucket (List Objects)" >> new WithApplication {
 
       val expectedCannonicalRequest =
         """|GET

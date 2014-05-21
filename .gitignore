@@ -11,3 +11,4 @@ dist
 /.project
 test/conf
 .target
+.idea
