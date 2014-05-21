@@ -20,9 +20,10 @@ object ApplicationBuild extends Build {
     version := appVersion,
     libraryDependencies ++= appDependencies,
     scalaVersion := "2.10.4",
+    crossScalaVersions := scalaVersion.value :: "2.11.0" :: Nil,
     organization := "nl.rhinofly",
     publishTo <<= version(rhinoflyRepo),
-    resolvers += rhinoflyRepo("RELEASE").get,
+    resolvers += rhinoflyRepo(appVersion).get,
     credentials += Credentials(Path.userHome / ".ivy2" / ".credentials"))
 
 }

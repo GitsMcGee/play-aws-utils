@@ -57,10 +57,10 @@ Installation
 
 ``` scala
   val appDependencies = Seq(
-    "nl.rhinofly" %% "play-aws-utils" % "3.0.0"
+    "nl.rhinofly" %% "play-aws-utils" % "4.0.0-SNAPSHOT"
   )
 
-  val main = PlayProject(appName, appVersion, appDependencies, mainLang = SCALA).settings(
+  val main = Project(appName, file(".")).enablePlugins(play.PlayScala).settings(
     resolvers += "Rhinofly Internal Release Repository" at "http://maven-repository.rhinofly.net:8081/artifactory/libs-release-local"
   )
 ```
